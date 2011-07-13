@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+  {block:Description}
+    <meta name="description" content="{MetaDescription}">
+  {/block:Description}
+  <meta charset="utf-8"> 
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono&v2" type="text/css" media="screen">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+    });
+  </script>
+  <style type="text/css">
+    body {
+      font-family: "Droid Sans Mono", Arial;
+      font-size: 15px;
+      background-color: #fff;
+    }
+    a {
+      color: #900;
+    }
+    #page {
+      margin: 75px auto;
+      width: 530px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    h1, h2 {
+      display: inline;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    h1:after {
+      content: ".";
+    }
+    #header a {
+      text-decoration: none;
+    }
+    #header a:hover {
+      text-decoration: underline;
+    }
+    p {
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+    .posts {
+      list-style: none;
+      padding-left: 0;
+    }
+    #header, .post {
+      border-bottom: 10px solid #ddd;
+      padding-bottom: 12px;
+    }
+    .post img {
+      margin-top: 30px;
+    }
+    {CustomCSS}
+  </style>
+</head>
+<body>
+  <div id="page">
+
+    <div id="header">
+      <h1><a href='/'>{Title}</a></h1>
+      {block:Description}
+        <h2>{Description}</h2>
+      {/block:Description}
+    </div>
+    <!-- header -->
+
+    <ul class="posts">
+      {block:Posts}
+        <li class="post">
+          {block:Text}
+            <div class="text">
+              {Body}
+            </div>
+          {/block:Text}
+          {block:Photo}
+            <div class="photo">
+              <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+              {block:Caption}
+                <p>{Caption}</p>
+              {/block:Caption}
+            </div>
+          {/block:Photo}
+          {block:Video}
+            <div class="video">
+              {Video-400}
+              {block:Caption}
+                <p>{Caption}</p>
+              {/block:Caption}
+            </div>
+          {/block:Video}
+          {block:Audio}
+            <div class="audio">
+              {AudioPlayerBlack}
+              {block:Caption}
+                <p>{Caption}</p>
+              {/block:Caption}
+            </div>
+          {/block:Audio}
+          <p class="author">{PostAuthorName} posted this {TimeAgo}.</p>
+        </li>
+      {/block:Posts}
+    </ul>
+    <!-- posts -->
+
+  </div>
+</body>
+</html>
