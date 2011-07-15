@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>{Title} {block:PostSummary} - {PostSummary} {/block:PostSummary}</title>
@@ -58,6 +57,13 @@
     }
     .post img, .audio_player {
       padding-top: 12px;
+    }
+    .nav {
+      list-style-type: none;
+      padding: 0;
+    }
+    .nav img {
+      width: 20px;
     }
     {CustomCSS}
   </style>
@@ -152,6 +158,11 @@
       {/block:Posts}
     </ul>
     <!-- posts -->
+
+    <ul class="nav">
+      <li><a href="{RSS}"><img src="http://static.tumblr.com/hgz6zyn/68jloeeha/rss.png" alt="rss"></a></li>
+    </ul>
+    <!-- links -->
 
   </div>
 </body>
