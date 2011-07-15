@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+  <title>{Title} {block:PostSummary} - {PostSummary} {/block:PostSummary}</title>
   {block:Description}
     <meta name="description" content="{MetaDescription}">
   {/block:Description}
@@ -54,9 +54,10 @@
     #header, .post {
       border-bottom: 3px solid #e2e2e2;
       padding-bottom: 12px;
+      margin-bottom: 24px;
     }
     .post img, .audio_player {
-      margin-top: 24px;
+      padding-top: 12px;
     }
     {CustomCSS}
   </style>
@@ -79,7 +80,7 @@
           <li class="post text">
             {Body}
             <p class="meta">
-              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              <a href="{Permalink}">posted by {PostAuthorName} {TimeAgo}</a>
               {block:NoteCount}
                 &mdash; {NoteCountWithLabel}
               {/block:NoteCount}
@@ -95,7 +96,7 @@
               <p>{Caption}</p>
             {/block:Caption}
             <p class="meta">
-              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              <a href="{Permalink}">posted by {PostAuthorName} {TimeAgo}</a>
               {block:NoteCount}
                 &mdash; {NoteCountWithLabel}
               {/block:NoteCount}
@@ -110,7 +111,7 @@
               <p>{Caption}</p>
             {/block:Caption}
             <p class="meta">
-              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              <a href="{Permalink}">posted by {PostAuthorName} {TimeAgo}</a>
               {block:NoteCount}
                 &mdash; {NoteCountWithLabel}
               {/block:NoteCount}
@@ -125,7 +126,7 @@
               <p>{Caption}</p>
             {/block:Caption}
             <p class="meta">
-              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              <a href="{Permalink}">posted by {PostAuthorName} {TimeAgo}</a>
               {block:NoteCount}
                 &mdash; {NoteCountWithLabel}
               {/block:NoteCount}
@@ -140,7 +141,7 @@
               <p>{Description}</p>
             {/block:Description}
             <p class="meta">
-              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              <a href="{Permalink}">posted by {PostAuthorName} {TimeAgo}</a>
               {block:NoteCount}
                 &mdash; {NoteCountWithLabel}
               {/block:NoteCount}
