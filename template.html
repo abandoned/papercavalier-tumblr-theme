@@ -17,6 +17,7 @@
     body {
       font-family: "Droid Sans Mono", Arial;
       font-size: 15px;
+      line-height: 2;
       background-color: #fff;
     }
     a {
@@ -51,11 +52,11 @@
       padding-left: 0;
     }
     #header, .post {
-      border-bottom: 10px solid #ddd;
+      border-bottom: 3px solid #e2e2e2;
       padding-bottom: 12px;
     }
-    .post img {
-      margin-top: 30px;
+    .post img, .audio_player {
+      margin-top: 24px;
     }
     {CustomCSS}
   </style>
@@ -73,49 +74,80 @@
 
     <ul class="posts">
       {block:Posts}
-        <li class="post">
-          {block:Text}
-            <div class="text">
-              {Body}
-              <p class="author">
-                {PostAuthorName} posted <a href="{Permalink}">this</a> {TimeAgo}.
-              </p>
-            </div>
-          {/block:Text}
-          {block:Photo}
-            <div class="photo">
-              <img src="{PhotoURL-400}" alt="{PhotoAlt}">
-              {block:Caption}
-                <p>{Caption}</p>
-              {/block:Caption}
-              <p class="author">
-                {PostAuthorName} posted <a href="{Permalink}">this</a> {TimeAgo}.
-              </p>
-            </div>
-          {/block:Photo}
-          {block:Video}
-            <div class="video">
-              {Video-400}
-              {block:Caption}
-                <p>{Caption}</p>
-              {/block:Caption}
-              <p class="author">
-                {PostAuthorName} posted <a href="{Permalink}">this</a> {TimeAgo}.
-              </p>
-            </div>
-          {/block:Video}
-          {block:Audio}
-            <div class="audio">
-              {AudioPlayerBlack}
-              {block:Caption}
-                <p>{Caption}</p>
-              {/block:Caption}
-              <p class="author">
-                {PostAuthorName} posted <a href="{Permalink}">this</a> {TimeAgo}.
-              </p>
-            </div>
-          {/block:Audio}
-        </li>
+
+        {block:Text}
+          <li class="post text">
+            {Body}
+            <p class="meta">
+              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              {block:NoteCount}
+                &mdash; {NoteCountWithLabel}
+              {/block:NoteCount}
+            </p>
+            <p>
+          </li>
+        {/block:Text}
+
+        {block:Photo}
+          <li class="post photo">
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+            {block:Caption}
+              <p>{Caption}</p>
+            {/block:Caption}
+            <p class="meta">
+              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              {block:NoteCount}
+                &mdash; {NoteCountWithLabel}
+              {/block:NoteCount}
+            </p>
+          </li>
+        {/block:Photo}
+
+        {block:Video}
+          <li class="post video">
+            {Video-400}
+            {block:Caption}
+              <p>{Caption}</p>
+            {/block:Caption}
+            <p class="meta">
+              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              {block:NoteCount}
+                &mdash; {NoteCountWithLabel}
+              {/block:NoteCount}
+            </p>
+          </li>
+        {/block:Video}
+
+        {block:Audio}
+          <li class="post audio">
+            {AudioPlayerBlack}
+            {block:Caption}
+              <p>{Caption}</p>
+            {/block:Caption}
+            <p class="meta">
+              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              {block:NoteCount}
+                &mdash; {NoteCountWithLabel}
+              {/block:NoteCount}
+            </p>
+          </li>
+        {/block:Audio}
+
+        {block:Link}
+          <li class="post link">
+            <p><a href="{URL}" class="link" {Target}>{Name}</a></p>
+            {block:Description}
+              <p>{Description}</p>
+            {/block:Description}
+            <p class="meta">
+              {PostAuthorName} posted <a href="{Permalink}">here</a> {TimeAgo}
+              {block:NoteCount}
+                &mdash; {NoteCountWithLabel}
+              {/block:NoteCount}
+            </p>
+          </li>
+        {/block:Link}
+
       {/block:Posts}
     </ul>
     <!-- posts -->
